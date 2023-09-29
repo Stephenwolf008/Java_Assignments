@@ -1,18 +1,36 @@
-package assignment3;
+package com.pack.assignment3;
 
-public class DayScholar extends Student{
+public class DayScholar extends Student {
 	private String residentialAddress;
+
 	
-	DayScholar(){}
-	
-	public DayScholar(int studentId, char studentType, String name, double fees, String address) {
-		super(studentId, studentType, name, fees);
-		this.residentialAddress = address;
+
+	public DayScholar() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public DayScholar(int studentId, char studentType, String studentName, double feesPerMonth,
+			String residentialAddress) {
+		super(studentId, studentType, studentName, feesPerMonth);
+		this.residentialAddress = residentialAddress;
+	}
+
+	public String getResidentialAddress() {
+		return residentialAddress;
+	}
+
+	public void setResidentialAddress(String residentialAddress) {
+		this.residentialAddress = residentialAddress;
 	}
 	
+	public DayScholar(int studentId, char studentType, String studentName, double feesPerMonth) {
+		super(studentId, studentType, studentName, feesPerMonth);
+	}
+
 	@Override
 	public void displayStudentDetails() {
 		super.displayStudentDetails();
-		System.out.println("Residential Address: "+this.residentialAddress);
+		System.out.println(" " + this.getResidentialAddress());
 	}
 }
